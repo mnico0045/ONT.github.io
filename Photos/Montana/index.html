@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
+        }
+</style>
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="https://mnico0045.github.io" class="w3-bar-item w3-button">HOME</a>
+            <a href="https://mnico0045.github.io/GIS" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> GIS PROJECTS</a>
+            <a href="https://mnico0045.github.io/Photos/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PHOTOS</a>
+            <a href="https://mnico0045.github.io/Cartography/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> MAPS</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                <i class="fa fa-search"></i>
+            </a>
+        </div>
+
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="https://mnico0045.github.io/Home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+            <a href="https://mnico0045.github.io/GIS" class="w3-bar-item w3-button" onclick="toggleFunction()"> GIS PROJECTS</a>
+            <a href="https://mnico0045.github.io/Photos/" class="w3-bar-item w3-button" onclick="toggleFunction()">PHOTOS</a>
+            <a href="https://mnico0045.github.io/Cartography" class="w3-bar-item w3-button" onclick="toggleFunction()">MAPS</a>
+        </div>
+    </div>
+    <h3 style="text-align:center"><br>South Dakota</h3>
+
+    <div class="container">
+	<div class="mySlides">
+		<div class="numbertext">1/52 </div>
+		<img src="00100srPORTRAIT_00100_BURST20200919152711206_COVER.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">2/52 </div>
+		<img src="DSC00006.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">3/52 </div>
+		<img src="DSC00007.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">4/52 </div>
+		<img src="DSC00009.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">5/52 </div>
+		<img src="DSC00011.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">6/52 </div>
+		<img src="DSC00017.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">7/52 </div>
+		<img src="DSC00038.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">8/52 </div>
+		<img src="DSC00048.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">9/52 </div>
+		<img src="DSC00060.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">10/52 </div>
+		<img src="DSC00067.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">11/52 </div>
+		<img src="DSC00068.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">12/52 </div>
+		<img src="DSC00078.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">13/52 </div>
+		<img src="DSC00081.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">14/52 </div>
+		<img src="DSC00094.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">15/52 </div>
+		<img src="DSC00112.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">16/52 </div>
+		<img src="DSC00115.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">17/52 </div>
+		<img src="DSC00119.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">18/52 </div>
+		<img src="DSC00131.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">19/52 </div>
+		<img src="DSC00137.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">20/52 </div>
+		<img src="DSC00139.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">21/52 </div>
+		<img src="DSC00165.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">22/52 </div>
+		<img src="DSC00169.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">23/52 </div>
+		<img src="DSC00172.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">24/52 </div>
+		<img src="DSC00200.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">25/52 </div>
+		<img src="DSC00236.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">26/52 </div>
+		<img src="DSC00251.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">27/52 </div>
+		<img src="DSC00276.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">28/52 </div>
+		<img src="DSC00324.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">29/52 </div>
+		<img src="DSC00326.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">30/52 </div>
+		<img src="DSC00330.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">31/52 </div>
+		<img src="DSC00334.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">32/52 </div>
+		<img src="DSC00336.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">33/52 </div>
+		<img src="DSC00418.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">34/52 </div>
+		<img src="DSC00450.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">35/52 </div>
+		<img src="DSC00457.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">36/52 </div>
+		<img src="DSC00471.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">37/52 </div>
+		<img src="DSC00484.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">38/52 </div>
+		<img src="DSC00520.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">39/52 </div>
+		<img src="DSC00525.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">40/52 </div>
+		<img src="DSC00563.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">41/52 </div>
+		<img src="DSC00607.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">42/52 </div>
+		<img src="DSC00627.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">43/52 </div>
+		<img src="IMG_20200908_211328.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">44/52 </div>
+		<img src="IMG_20200908_211606.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">45/52 </div>
+		<img src="IMG_20200918_175629.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">46/52 </div>
+		<img src="IMG_20200918_175825.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">47/52 </div>
+		<img src="IMG_20200918_215355.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">48/52 </div>
+		<img src="IMG_20200920_113951.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">49/52 </div>
+		<img src="MVIMG_20200918_194949.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">50/52 </div>
+		<img src="MVIMG_20200918_214557.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">51/52 </div>
+		<img src="PANO_20200919_152453.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">52/52 </div>
+		<img src="PANO_20200920_122033.jpg" style="width:100%">
+	</div>
+
+    </div>
+
+
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+		<div class="column">
+			<img class="demo cursor" src="00100srPORTRAIT_00100_BURST20200919152711206_COVER.jpg" style="width:100%" onclick="currentSlide(1)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00006.jpg" style="width:100%" onclick="currentSlide(2)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00007.jpg" style="width:100%" onclick="currentSlide(3)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00009.jpg" style="width:100%" onclick="currentSlide(4)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00011.jpg" style="width:100%" onclick="currentSlide(5)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00017.jpg" style="width:100%" onclick="currentSlide(6)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00038.jpg" style="width:100%" onclick="currentSlide(7)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00048.jpg" style="width:100%" onclick="currentSlide(8)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00060.jpg" style="width:100%" onclick="currentSlide(9)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00067.jpg" style="width:100%" onclick="currentSlide(10)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00068.jpg" style="width:100%" onclick="currentSlide(11)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00078.jpg" style="width:100%" onclick="currentSlide(12)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00081.jpg" style="width:100%" onclick="currentSlide(13)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00094.jpg" style="width:100%" onclick="currentSlide(14)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00112.jpg" style="width:100%" onclick="currentSlide(15)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00115.jpg" style="width:100%" onclick="currentSlide(16)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00119.jpg" style="width:100%" onclick="currentSlide(17)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00131.jpg" style="width:100%" onclick="currentSlide(18)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00137.jpg" style="width:100%" onclick="currentSlide(19)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00139.jpg" style="width:100%" onclick="currentSlide(20)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00165.jpg" style="width:100%" onclick="currentSlide(21)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00169.jpg" style="width:100%" onclick="currentSlide(22)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00172.jpg" style="width:100%" onclick="currentSlide(23)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00200.jpg" style="width:100%" onclick="currentSlide(24)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00236.jpg" style="width:100%" onclick="currentSlide(25)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00251.jpg" style="width:100%" onclick="currentSlide(26)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00276.jpg" style="width:100%" onclick="currentSlide(27)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00324.jpg" style="width:100%" onclick="currentSlide(28)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00326.jpg" style="width:100%" onclick="currentSlide(29)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00330.jpg" style="width:100%" onclick="currentSlide(30)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00334.jpg" style="width:100%" onclick="currentSlide(31)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00336.jpg" style="width:100%" onclick="currentSlide(32)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00418.jpg" style="width:100%" onclick="currentSlide(33)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00450.jpg" style="width:100%" onclick="currentSlide(34)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00457.jpg" style="width:100%" onclick="currentSlide(35)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00471.jpg" style="width:100%" onclick="currentSlide(36)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00484.jpg" style="width:100%" onclick="currentSlide(37)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00520.jpg" style="width:100%" onclick="currentSlide(38)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00525.jpg" style="width:100%" onclick="currentSlide(39)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00563.jpg" style="width:100%" onclick="currentSlide(40)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00607.jpg" style="width:100%" onclick="currentSlide(41)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00627.jpg" style="width:100%" onclick="currentSlide(42)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200908_211328.jpg" style="width:100%" onclick="currentSlide(43)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200908_211606.jpg" style="width:100%" onclick="currentSlide(44)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200918_175629.jpg" style="width:100%" onclick="currentSlide(45)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200918_175825.jpg" style="width:100%" onclick="currentSlide(46)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200918_215355.jpg" style="width:100%" onclick="currentSlide(47)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200920_113951.jpg" style="width:100%" onclick="currentSlide(48)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="MVIMG_20200918_194949.jpg" style="width:100%" onclick="currentSlide(49)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="MVIMG_20200918_214557.jpg" style="width:100%" onclick="currentSlide(50)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="PANO_20200919_152453.jpg" style="width:100%" onclick="currentSlide(51)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="PANO_20200920_122033.jpg" style="width:100%" onclick="currentSlide(52)">
+		</div>
+		</div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        </script>
+
+</body>
+</html>
+
