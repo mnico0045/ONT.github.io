@@ -2,6 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>The Mile High City</title>
@@ -236,137 +243,157 @@
                 transform: rotate(0deg);
             }
         }
-
     </style>
 </head>
 <body>
     <h1>Denver and the Rockies</h1>
-
-    <div class="gallery" id="gallery">
-        <div class="gallery-item">
-            <div class="content"><img src="00000IMG_00000_BURST20200902204643422_COVER.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="00000IMG_00000_BURST20200903213656904_COVER.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00002.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00011.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00014.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00015.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00043.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00054.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200829_093439.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200829_095600.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200829_104440.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200829_110520.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200830_133011.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200830_220713.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200831_191039.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200831_191040.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200901_181834.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_180056.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_190919.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_200313.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_202646.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_202751.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_204007.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200902_204839.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200903_163241.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="MVIMG_20200829_095550.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="MVIMG_20200830_123218.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="MVIMG_20200902_192118.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="PANO_20200829_112000.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="PANO_20200902_200735.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="PANO_20200903_172848.jpg" alt=""></div>
+    <div class="w3-top">
+        <div class="w3-bar" id="myNavbar">
+            <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                <i class="fa fa-bars"></i>
+            </a>
+            <a href="https://mnico0045.github.io" class="w3-bar-item w3-button">HOME</a>
+            <a href="https://mnico0045.github.io/GIS" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> GIS PROJECTS</a>
+            <a href="https://mnico0045.github.io/Photos/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PHOTOS</a>
+            <a href="https://mnico0045.github.io/Cartography/" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> MAPS</a>
+            <a href="#" class="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
+                <i class="fa fa-search"></i>
+            </a>
         </div>
     </div>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="https://mnico0045.github.io/Home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+            <a href="hhttps://mnico0045.github.io/GIS" class="w3-bar-item w3-button" onclick="toggleFunction()"> GIS PROJECTS</a>
+            <a href="ttps://mnico0045.github.io/Photos/" class="w3-bar-item w3-button" onclick="toggleFunction()"></a>
+                PHOTOS/a>
+                <a href="ttps://mnico0045.github.io/Cartography" class="w3-bar-item w3-button" onclick="toggleFunction()">MAPS</a>
+        </div>
+        <div class="gallery" id="gallery">
+            <div class="gallery-item">
+                <div class="content"><img src="00000IMG_00000_BURST20200902204643422_COVER.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="00000IMG_00000_BURST20200903213656904_COVER.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00002.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00011.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00014.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00015.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00043.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="DSC00054.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200829_093439.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200829_095600.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200829_104440.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200829_110520.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200830_133011.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200830_220713.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200831_191039.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200831_191040.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200901_181834.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_180056.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_190919.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_200313.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_202646.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_202751.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_204007.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200902_204839.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="IMG_20200903_163241.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="MVIMG_20200829_095550.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="MVIMG_20200830_123218.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="MVIMG_20200902_192118.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="PANO_20200829_112000.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="PANO_20200902_200735.jpg" alt=""></div>
+            </div>
+
+            <div class="gallery-item">
+                <div class="content"><img src="PANO_20200903_172848.jpg" alt=""></div>
+            </div>
+        </div>
         <script>
             var gallery = document.querySelector('#gallery');
             var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
