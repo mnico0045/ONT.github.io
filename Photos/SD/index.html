@@ -1,233 +1,118 @@
-﻿<html lang="en">
+﻿<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Mile High City</title>
+<title>Nico Goes Underground</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        body {
-            background-color: #000000;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Lato", sans-serif;
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
         }
-
-        .hello {
-            opacity: 1 !important;
-        }
-
-        .full {
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100%;
-            z-index: 1;
-        }
-
-            .full .content {
-                background-color: rgba(0,0,0,0.75) !important;
-                height: 100%;
-                width: 100%;
-                display: grid;
-            }
-
-                .full .content img {
-                    left: 50%;
-                    transform: translate3d(0, 0, 0);
-                    animation: zoomin 1s ease;
-                    max-width: 100%;
-                    max-height: 100%;
-                    margin: auto;
-                }
-
-        .byebye {
-            opacity: 0;
-        }
-
-            .byebye:hover {
-                transform: scale(0.2) !important;
-            }
-
-        .hello {
-            opacity: 1 !important;
-        }
-
-        .full {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-            .full .content {
-                background-color: rgba(0,0,0,0.75) !important;
-                height: 100%;
-                width: 100%;
-                display: grid;
-            }
-
-                .full .content img {
-                    left: 50%;
-                    transform: translate3d(0, 0, 0);
-                    animation: zoomin 1s ease;
-                    max-width: 100%;
-                    max-height: 100%;
-                    margin: auto;
-                }
-
-        .byebye {
-            opacity: 0;
-        }
-
-            .byebye:hover {
-                transform: scale(0.2) !important;
-            }
-
-        .gallery {
-            display: grid;
-            grid-column-gap: 8px;
-            grid-row-gap: 8px;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 8px;
-        }
-
-            .gallery img {
-                max-width: 100%;
-                border-radius: 8px;
-                box-shadow: 0 0 16px #333;
-                transition: all 1.5s ease;
-            }
-
-                .gallery img:hover {
-                    box-shadow: 0 0 32px #333;
-                }
-
-            .gallery .content {
-                padding: 4px;
-            }
-
-            .gallery .gallery-item {
-                transition: grid-row-start 300ms linear;
-                transition: transform 300ms ease;
-                transition: all 0.5s ease;
-                cursor: pointer;
-            }
-
-                .gallery .gallery-item:hover {
-                    transform: scale(1.025);
-                }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-            }
-        }
-
-        @media (max-width: 400px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-            }
-        }
-
-        @-moz-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @-webkit-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @-o-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-    </style>
+</style>
 </head>
 <body>
-    <h1>Denver and the Rockies</h1>
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -241,167 +126,158 @@
                 <i class="fa fa-search"></i>
             </a>
         </div>
-    </div>
-    <!-- Navbar on small screens -->
-    <div class="gallery" id="gallery">
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00004.jpg" alt=""></div>
-        </div>
 
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00009.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00054.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00076.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00096.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00109.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00110.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00111.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00116.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00117-PANO.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00153.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="DSC00188.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_113942.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_152850.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_195555.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_200951.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_202827.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_203956.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200905_210036.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_083810.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_083816.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_094349.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_094357.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_094401.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_094402.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_103558.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="IMG_20200906_210310.jpg" alt=""></div>
-        </div>
-
-        <div class="gallery-item">
-            <div class="content"><img src="PANO_20200905_204102.jpg" alt=""></div>
+        <!-- Navbar on small screens -->
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="https://mnico0045.github.io/Home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+            <a href="hhttps://mnico0045.github.io/GIS" class="w3-bar-item w3-button" onclick="toggleFunction()"> GIS PROJECTS</a>
+            <a href="ttps://mnico0045.github.io/Photos/" class="w3-bar-item w3-button" onclick="toggleFunction()">PHOTOS</a>
+                <a href="ttps://mnico0045.github.io/Cartography" class="w3-bar-item w3-button" onclick="toggleFunction()">MAPS</a>
         </div>
     </div>
-    <script>
-            var gallery = document.querySelector('#gallery');
-            var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-            var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-            var resizeAll = function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                    var el = item;
-                    el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-                });
-            };
-            gallery.querySelectorAll('img').forEach(function (item) {
-                item.classList.add('byebye');
-                if (item.complete) {
-                    console.log(item.src);
-                }
-                else {
-                    item.addEventListener('load', function () {
-                        var altura = getVal(gallery, 'grid-auto-rows');
-                        var gap = getVal(gallery, 'grid-row-gap');
-                        var gitem = item.parentElement.parentElement;
-                        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                        item.classList.remove('byebye');
-                    });
-                }
-            });
-            window.addEventListener('resize', resizeAll);
-            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    item.classList.toggle('full');
-                });
-            });
+    <h3 style="text-align:center">
+        <br>South Dakota</h3>
 
-    </script>
+        <div class="container">
+            <div class="mySlides">
+                <div class="numbertext">1 / 11</div>
+                <img src="Campgrounds.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">2 / 11</div>
+                <img src="The Rotunda.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">3 / 11</div>
+                <img src="The Mine3.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">4 / 11</div>
+                <img src="Preachers Corner.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">5 / 11</div>
+                <img src="The Mine2.jpg" style="width:100%">
+            </div>
+
+
+            <div class="mySlides">
+                <div class="numbertext">6 / 11</div>
+                <img src="The Mine.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">7 / 11</div>
+                <img src="The Mine4.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">8 / 11</div>
+                <img src="Snail.JPG" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">9 / 11</div>
+                <img src="Campsite.JPG" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">10 / 11</div>
+                <img src="Flower In The Dark.JPG" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <div class="numbertext">11 / 11</div>
+                <img src="Night Critte.JPG" style="width:100%">
+            </div>
+
+
+            <a class="prev" onclick="plusSlides(-1)">❮</a>
+            <a class="next" onclick="plusSlides(1)">❯</a>
+
+            <div class="caption-container">
+                <p id="caption"></p>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor" src="Campgrounds.jpg" style="width:100%" onclick="currentSlide(1)" alt="Campgrounds">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="The Rotunda.jpg" style="width:100%" onclick="currentSlide(2)" alt="The Rotunda">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="The Mine3.jpg" style="width:100%" onclick="currentSlide(3)" alt="Light and Dark">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="Preachers Corner.jpg" style="width:100%" onclick="currentSlide(4)" alt="Preacher's Corner">
+                </div>
+                <div class="column">
+                    <img class="demo cursor" src="The Mine2.jpg" style="width:100%" onclick="currentSlide(5)" alt="Oh Shit Balrog">
+                </div>
+
+
+                <div class="column">
+                    <img class="demo cursor" src="The Mine.jpg" style="width:100%" onclick="currentSlide(6)" alt="It Gets Bigger">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="The Mine4.jpg" style="width:100%" onclick="currentSlide(7)" alt="Down The Aisle">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="Snail.JPG" style="width:100%" onclick="currentSlide(8)" alt="Snails Don't Bark">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="Campsite.JPG" style="width:100%" onclick="currentSlide(9)" alt="Home Sweet Home">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="Flower In The Dark.JPG" style="width:100%" onclick="currentSlide(10)" alt="Center of Attention">
+                </div>
+
+                <div class="column">
+                    <img class="demo cursor" src="Night Critte.JPG" style="width:100%" onclick="currentSlide(11)" alt="He's Got Heart">
+                </div>
+            </div>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
+        </script>
+
 </body>
 </html>
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
+
