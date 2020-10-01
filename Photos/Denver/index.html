@@ -1,234 +1,118 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>The Mile High City</title>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-        body {
-            background-color: #000000;
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    body, h1, h2, h3, h4, h5, h6 {
+        font-family: "Lato", sans-serif;
+    }
+
+    body, html {
+        height: 100%;
+        color: #777;
+        line-height: 1.8;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    img {
+        vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
-        body, h1, h2, h3, h4, h5, h6 {
-            font-family: "Lato", sans-serif;
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+        .active,
+        .demo:hover {
+            opacity: 1;
         }
-
-        .hello {
-            opacity: 1 !important;
-        }
-
-        .full {
-            position: fixed;
-            left: 0;
-            top: 0;
-            height: 100%;
-            z-index: 1;
-        }
-
-            .full .content {
-                background-color: rgba(0,0,0,0.75) !important;
-                height: 100%;
-                width: 100%;
-                display: grid;
-            }
-
-                .full .content img {
-                    left: 50%;
-                    transform: translate3d(0, 0, 0);
-                    animation: zoomin 1s ease;
-                    max-width: 100%;
-                    max-height: 100%;
-                    margin: auto;
-                }
-
-        .byebye {
-            opacity: 0;
-        }
-
-            .byebye:hover {
-                transform: scale(0.2) !important;
-            }
-
-        .hello {
-            opacity: 1 !important;
-        }
-
-        .full {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-            .full .content {
-                background-color: rgba(0,0,0,0.75) !important;
-                height: 100%;
-                width: 100%;
-                display: grid;
-            }
-
-                .full .content img {
-                    left: 50%;
-                    transform: translate3d(0, 0, 0);
-                    animation: zoomin 1s ease;
-                    max-height: 100%;
-                    margin: auto;
-                }
-
-        .byebye {
-            opacity: 0;
-        }
-
-            .byebye:hover {
-                transform: scale(0.2) !important;
-            }
-
-        .gallery {
-            display: grid;
-            grid-column-gap: 8px;
-            grid-row-gap: 8px;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            grid-auto-rows: 8px;
-        }
-
-            .gallery img {
-                max-width: 100%;
-                border-radius: 8px;
-                box-shadow: 0 0 16px #333;
-                transition: all 1.5s ease;
-            }
-
-                .gallery img:hover {
-                    box-shadow: 0 0 32px #333;
-                }
-
-            .gallery .content {
-                padding: 4px;
-            }
-
-            .gallery .gallery-item {
-                transition: grid-row-start 300ms linear;
-                transition: transform 300ms ease;
-                transition: all 0.5s ease;
-                cursor: pointer;
-            }
-
-                .gallery .gallery-item:hover {
-                    transform: scale(1.025);
-                }
-
-        @media (max-width: 600px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-            }
-        }
-
-        @media (max-width: 400px) {
-            .gallery {
-                grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-            }
-        }
-
-        @-moz-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @-webkit-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @-o-keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-        @keyframes zoomin {
-            0% {
-                max-width: 50%;
-                transform: rotate(-30deg);
-                filter: blur(4px);
-            }
-
-            30% {
-                filter: blur(4px);
-                transform: rotate(-80deg);
-            }
-
-            70% {
-                max-width: 50%;
-                transform: rotate(45deg);
-            }
-
-            100% {
-                max-width: 100%;
-                transform: rotate(0deg);
-            }
-        }
-
-    </style>
+</style>
 </head>
 <body>
-    <h1>Denver and the Rockies</h1>
     <div class="w3-top">
         <div class="w3-bar" id="myNavbar">
             <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
@@ -242,167 +126,279 @@
                 <i class="fa fa-search"></i>
             </a>
         </div>
-    </div>
+
         <!-- Navbar on small screens -->
-        <div class="gallery" id="gallery">
-            <div class="gallery-item">
-                <div class="content"><img src="00000IMG_00000_BURST20200902204643422_COVER.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="00000IMG_00000_BURST20200903213656904_COVER.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00002.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00011.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00014.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00015.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00043.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="DSC00054.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200829_093439.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200829_095600.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200829_104440.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200829_110520.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200830_133011.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200830_220713.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200831_191039.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200831_191040.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200901_181834.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_180056.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_190919.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_200313.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_202646.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_202751.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_204007.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200902_204839.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="IMG_20200903_163241.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="MVIMG_20200829_095550.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="MVIMG_20200830_123218.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="MVIMG_20200902_192118.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="PANO_20200829_112000.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="PANO_20200902_200735.jpg" alt=""></div>
-            </div>
-
-            <div class="gallery-item">
-                <div class="content"><img src="PANO_20200903_172848.jpg" alt=""></div>
-            </div>
+        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+            <a href="https://mnico0045.github.io/Home" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
+            <a href="https://mnico0045.github.io/GIS" class="w3-bar-item w3-button" onclick="toggleFunction()"> GIS PROJECTS</a>
+            <a href="https://mnico0045.github.io/Photos/" class="w3-bar-item w3-button" onclick="toggleFunction()">PHOTOS</a>
+            <a href="https://mnico0045.github.io/Cartography" class="w3-bar-item w3-button" onclick="toggleFunction()">MAPS</a>
         </div>
-        <script>
-            var gallery = document.querySelector('#gallery');
-            var getVal = function (elem, style) { return parseInt(window.getComputedStyle(elem).getPropertyValue(style)); };
-            var getHeight = function (item) { return item.querySelector('.content').getBoundingClientRect().height; };
-            var resizeAll = function () {
-                var altura = getVal(gallery, 'grid-auto-rows');
-                var gap = getVal(gallery, 'grid-row-gap');
-                gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                    var el = item;
-                    el.style.gridRowEnd = "span " + Math.ceil((getHeight(item) + gap) / (altura + gap));
-                });
-            };
-            gallery.querySelectorAll('img').forEach(function (item) {
-                item.classList.add('byebye');
-                if (item.complete) {
-                    console.log(item.src);
-                }
-                else {
-                    item.addEventListener('load', function () {
-                        var altura = getVal(gallery, 'grid-auto-rows');
-                        var gap = getVal(gallery, 'grid-row-gap');
-                        var gitem = item.parentElement.parentElement;
-                        gitem.style.gridRowEnd = "span " + Math.ceil((getHeight(gitem) + gap) / (altura + gap));
-                        item.classList.remove('byebye');
-                    });
-                }
-            });
-            window.addEventListener('resize', resizeAll);
-            gallery.querySelectorAll('.gallery-item').forEach(function (item) {
-                item.addEventListener('click', function () {
-                    item.classList.toggle('full');
-                });
-            });
+    </div>
+    <h3 style="text-align:center"><br>South Dakota</h3>
 
+    <div class="container">
+	<div class="mySlides">
+		<div class="numbertext">1/31 </div>
+		<img src="00000IMG_00000_BURST20200902204643422_COVER.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">2/31 </div>
+		<img src="00000IMG_00000_BURST20200903213656904_COVER.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">3/31 </div>
+		<img src="DSC00002.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">4/31 </div>
+		<img src="DSC00011.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">5/31 </div>
+		<img src="DSC00014.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">6/31 </div>
+		<img src="DSC00015.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">7/31 </div>
+		<img src="DSC00043.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">8/31 </div>
+		<img src="DSC00054.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">9/31 </div>
+		<img src="IMG_20200829_093439.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">10/31 </div>
+		<img src="IMG_20200829_095600.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">11/31 </div>
+		<img src="IMG_20200829_104440.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">12/31 </div>
+		<img src="IMG_20200829_110520.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">13/31 </div>
+		<img src="IMG_20200830_133011.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">14/31 </div>
+		<img src="IMG_20200830_220713.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">15/31 </div>
+		<img src="IMG_20200831_191039.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">16/31 </div>
+		<img src="IMG_20200831_191040.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">17/31 </div>
+		<img src="IMG_20200901_181834.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">18/31 </div>
+		<img src="IMG_20200902_180056.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">19/31 </div>
+		<img src="IMG_20200902_190919.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">20/31 </div>
+		<img src="IMG_20200902_200313.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">21/31 </div>
+		<img src="IMG_20200902_202646.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">22/31 </div>
+		<img src="IMG_20200902_202751.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">23/31 </div>
+		<img src="IMG_20200902_204007.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">24/31 </div>
+		<img src="IMG_20200902_204839.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">25/31 </div>
+		<img src="IMG_20200903_163241.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">26/31 </div>
+		<img src="MVIMG_20200829_095550.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">27/31 </div>
+		<img src="MVIMG_20200830_123218.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">28/31 </div>
+		<img src="MVIMG_20200902_192118.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">29/31 </div>
+		<img src="PANO_20200829_112000.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">30/31 </div>
+		<img src="PANO_20200902_200735.jpg" style="width:100%">
+	</div>
+	<div class="mySlides">
+		<div class="numbertext">31/31 </div>
+		<img src="PANO_20200903_172848.jpg" style="width:100%">
+	</div>
+    </div>
+
+
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+		<div class="column">
+			<img class="demo cursor" src="00000IMG_00000_BURST20200902204643422_COVER.jpg" style="width:100%" onclick="currentSlide(1)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="00000IMG_00000_BURST20200903213656904_COVER.jpg" style="width:100%" onclick="currentSlide(2)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00002.jpg" style="width:100%" onclick="currentSlide(3)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00011.jpg" style="width:100%" onclick="currentSlide(4)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00014.jpg" style="width:100%" onclick="currentSlide(5)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00015.jpg" style="width:100%" onclick="currentSlide(6)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00043.jpg" style="width:100%" onclick="currentSlide(7)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="DSC00054.jpg" style="width:100%" onclick="currentSlide(8)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200829_093439.jpg" style="width:100%" onclick="currentSlide(9)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200829_095600.jpg" style="width:100%" onclick="currentSlide(10)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200829_104440.jpg" style="width:100%" onclick="currentSlide(11)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200829_110520.jpg" style="width:100%" onclick="currentSlide(12)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200830_133011.jpg" style="width:100%" onclick="currentSlide(13)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200830_220713.jpg" style="width:100%" onclick="currentSlide(14)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200831_191039.jpg" style="width:100%" onclick="currentSlide(15)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200831_191040.jpg" style="width:100%" onclick="currentSlide(16)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200901_181834.jpg" style="width:100%" onclick="currentSlide(17)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_180056.jpg" style="width:100%" onclick="currentSlide(18)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_190919.jpg" style="width:100%" onclick="currentSlide(19)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_200313.jpg" style="width:100%" onclick="currentSlide(20)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_202646.jpg" style="width:100%" onclick="currentSlide(21)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_202751.jpg" style="width:100%" onclick="currentSlide(22)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_204007.jpg" style="width:100%" onclick="currentSlide(23)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200902_204839.jpg" style="width:100%" onclick="currentSlide(24)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="IMG_20200903_163241.jpg" style="width:100%" onclick="currentSlide(25)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="MVIMG_20200829_095550.jpg" style="width:100%" onclick="currentSlide(26)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="MVIMG_20200830_123218.jpg" style="width:100%" onclick="currentSlide(27)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="MVIMG_20200902_192118.jpg" style="width:100%" onclick="currentSlide(28)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="PANO_20200829_112000.jpg" style="width:100%" onclick="currentSlide(29)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="PANO_20200902_200735.jpg" style="width:100%" onclick="currentSlide(30)">
+		</div>
+		<div class="column">
+			<img class="demo cursor" src="PANO_20200903_172848.jpg" style="width:100%" onclick="currentSlide(31)">
+		</div>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                var captionText = document.getElementById("caption");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " active";
+                captionText.innerHTML = dots[slideIndex - 1].alt;
+            }
         </script>
+
 </body>
 </html>
+
